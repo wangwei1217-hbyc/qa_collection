@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 开启MVC注解 -->
+    <mvc:annotation-driven />
+
+    <!-- 包扫描 -->
+    <context:component-scan base-package="com.wangwei"/>
+
+    <!-- 读取配置 -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="fileEncoding" value="UTF-8"/>
+        <property name="locations">
+            <list>
+                <value>classpath:config/app.properties</value>
+                <value>classpath:config/jdbc.properties</value>
+                <value>classpath:config/redis.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 定时/异步任务的线程池配置 -->
+    <import resource="spring-task.xml"/>
+    <!-- 数据访问层配置 -->
+    <import resource="spring-mybatis.xml"/>
+    <!-- redis -->
+    <import resource="spring-redis.xml"/>
+</beans>
