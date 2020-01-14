@@ -165,10 +165,20 @@
             <artifactId>spring-data-redis</artifactId>
             <version>1.6.4.RELEASE</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>2.7.3</version>
+        </dependency>-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
         </dependency>
     </dependencies>
 
