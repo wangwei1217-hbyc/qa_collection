@@ -7,7 +7,11 @@
     <groupId>com.wangwei.study</groupId>
     <artifactId>qa_collection</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <modules>
+        <module>cloneRequestInputStream</module>
+        <module>customException</module>
+    </modules>
+    <packaging>pom</packaging>
 
 
     <properties>
